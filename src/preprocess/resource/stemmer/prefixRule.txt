@@ -1,0 +1,76 @@
+di([a-z]+)>>>di&$1
+##UNTIL INDICATED LINE, ADD THESE WORDS MANUALLY TO THE KE-STARTED WORD EXCEPTION LIST
+ketahu([a-z]*)>>>ke&tahu$1
+kehendak([a-z]*)>>>ke&hendak$1
+##---------------------------------------------------------------------------
+ke([a-z]+)an>>>ke&$1an
+se([a-z]+)>>>se&$1
+terubah([a-z]*)>>>ter&ubah$1
+ter([^aeiou\W\d])([a-z]+)>>>ter&$1$2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+ter([aeiou])([a-z]+)>>>ter&r$1$2
+te([^aeiou\W\d]+er)([^aeiou\W\d])([a-z]+)>>>ter&$1$2$3
+berubah([a-z]*)>>>ber&ubah$1
+ber([^aeiou\W\d])([a-z]+)>>>ber&$1$2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+ber([aeiou])([a-z]+)>>>ber&r$1$2
+bel(ajar[a-z]*)>>>bel&$1
+be([^aeiou\W\d]+er)([^aeiou\W\d])([a-z]+)>>>ber&$1$2$3
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+memper([a-z]+)>>>me&per$1
+mempel(ajar[a-z]+)>>>memper&$1
+mempe([^aeiou\W\d]+er)([^aeiou\W\d])([a-z]+)>>>memper&$1$2$3
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+menge([a-z]+)>>>me&ke$1
+mengaben([a-z]*)>>>me&ngaben$1
+menganga([a-z]*)>>>me&nganga$1
+mengeden([a-z]*)>>>me&ngeden$1
+mengenas([a-z]*)>>>me&ngenas$1
+mengeong([a-z]*)>>>me&ngeong$1
+mengeri([a-z]*)>>>me&ngeri$1
+mengiang([a-z]*)>>>me&ngiang$1
+mengilu([a-z]*)>>>me&ngilu$1
+meng([^aeiou\W\d])([a-z]+)>>>me&$1$2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+meng([aeiou])([a-z]+)>>>me&k$1$2
+menyala([a-z]*)>>>me&nyala$1
+menyaman([a-z]*)>>>me&nyaman$1
+menyanyi([a-z]*)>>>me&nyanyi$1
+menyaringkan([a-z]*)>>>me&nyaringkan$1
+menyata([a-z]*)>>>me&nyata$1
+menyeri([a-z]*)>>>me&nyeri$1
+menyinyir([a-z]*)>>>me&nyinyir$1
+menyunyut([a-z]*)>>>me&nyunyut$1
+meny([a-z]+)>>>me&s$1
+men([^aeiou\W\d])([a-z]+)>>>me&$1S2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+men([aeiou])([a-z]+)>>>me&n$1S2
+mem([^aeiou\W\d])([a-z]+)>>>me&$1$2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+mem([aeiou])([a-z]+)>>>me&m$1$2
+me([a-z]+)>>>me&$1
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+penge([a-z]+)>>>pe&ke$1
+pengaben([a-z]*)>>>pe&ngaben$1
+pengeong([a-z]*)>>>pe&ngeong$1
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+peng([a-z]+)>>>pe&k$1
+penyaman([a-z]*)>>>pe&nyaman$1
+penyanyi([a-z]*)>>>pe&nyanyi$1
+penyata([a-z]*)>>>pe&nyata$1
+penyeri([a-z]*)>>>pe&nyeri$1
+peny([a-z]+)>>>pe&s$1
+pen([^aeiou\W\d])([a-z]+)>>>pe&$1S2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+pen([aeiou])([a-z]+)>>>pe&n$1S2
+pemr([a-z]+)>>>pe&pr$1
+pem([^aeiour\W\d])([a-z]+)>>>pe&$1$2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+pem([aeiou])([a-z]+)>>>pe&m$1$2
+perubah([a-z]*)>>>per&ubah$1
+per([^aeiou\W\d])([a-z]+)>>>per&$1$2
+##THE NEXT ONE IS A SPECIAL RULE; TO BE PROCESSED IN THE PROGRAM
+per([aeiou])([a-z]+)>>>pe&r$1$2
+pel(ajar[a-z]*)>>>per&$1
+pe([^aeiou\W\d]+er)([^aeiou\W\d])([a-z]+)>>>per&$1$2$3
+pe([a-z]+)>>>per&$1
