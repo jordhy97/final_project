@@ -1,5 +1,6 @@
 from tensorflow.keras import layers
 from tensorflow.keras.models import load_model
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow import initializers
 from aoe.cmla import CMLA
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
@@ -120,35 +121,91 @@ class AspectOpinionExtractor():
         else:
             return None
 
-    def fit(self, X, y, epoch=1, batch_size=1, verbose=0):
+    def fit(self, X_train, y_train, X_val=None, y_val=None,
+            model_filename=None, epoch=1, batch_size=1, verbose=0, patience=1):
         """
         Fit model on data.
 
         Parameters
         ----------
-        X: Train data.
-        y: Train data labels.
+        X_train: Train data.
+        y_train: Train data labels.
+        X_val: Validation data.
+        y_val: Validation data labels.
+        model_filename: filename for the model (for checkpoint).
         epoch: Number of epochs.
+        batch_size: Size of train batch.
+        verbose: Verbosity.
+        patience: Patience value for early stopping.
+        """
+        # mini-batch
+        if batch_size > 1:
+            if X_val is not None:
+                es = EarlyStopping(monitor='val_loss', mode='min', verbose=verbose, patience=patience)
+                mc = ModelCheckpoint('model_filename', monitor='val_loss', mode='min', verbose=verbose,
+                                      save_best_only=True)
+                self.model.fit(X_train, y_train, validation_data=(X_val, y_val),
+                               batch_size=batch_size, epochs=epoch, verbose=verbose, callbacks=[es, mc])
+            else:
+                self.model.fit(X_train, y_train,
+                               batch_size=batch_size, epochs=epoch, verbose=verbose)
+
+        # incremental learning
+        else:
+            if X_val is not None:
+                min_loss = float('inf')
+                patience_count = 0
+                for i in range(epoch):
+                    # shuffle data on each epoch
+                    p = np.random.permutation(len(X_train))
+                    for j in p:
+                        self.model.fit(X_train[j], y_train[j], batch_size=1, verbose=verbose)
+
+                    epoch_loss = self.get_validation_loss(X_val, y_val, batch_size, verbose)
+                    print('Done with epoch', i, ', epoch error =', epoch_loss, ', min error =', min_loss)
+
+                    if epoch_loss < min_loss:
+                        min_loss = epoch_loss
+                        patience_count = 0
+                        self.save(model_filename)
+                    else:
+                        patience_count += 1
+
+                    if patience_count == patience:
+                        print('Epoch', epoch, 'early stopping')
+                        break
+            else:
+                for i in range(epoch):
+                    # shuffle data on each epoch
+                    p = np.random.permutation(len(X_train))
+                    for j in p:
+                        self.model.fit(X_train[j], y_train[j], batch_size=1, verbose=verbose)
+
+    def get_validation_loss(self, X_val, y_val, batch_size=1, verbose=0):
+        """
+        Get validation loss value.
+
+        Parameters
+        ----------
+        X_val: Validation data.
+        y_val: Validation data labels.
         batch_size: Size of train batch.
         verbose: Verbosity.
 
         Returns
         -------
-        self
+        validation loss.
         """
         # mini-batch
         if batch_size > 1:
-            self.model.fit(X, y, batch_size=batch_size, epochs=epoch, verbose=verbose)
+            return self.model.evaluate(X_val, y_val, batch_size=batch_size, verbose=verbose)[0]
 
         # incremental learning
         else:
-            for i in range(epoch):
-                # shuffle data on each epoch
-                p = np.random.permutation(len(X))
-                for j in p:
-                    self.model.fit(X[j], y[j], batch_size=1, verbose=verbose)
-
-        return self
+            loss = 0
+            for i in range(len(X_val)):
+                loss += self.model.evaluate(X_val[i], y_val[i], batch_size=1, verbose=verbose)[0]
+            return loss
 
     def predict(self, X):
         """
