@@ -109,7 +109,7 @@ class CMLA(layers.Layer):
                                                                      recurrent_initializer=initializers.random_uniform(-0.2, 0.2),
                                                                      dropout=self.dropout_rate))
         else:
-            raise ValueError("Unknown rnn type %s. Valid types are gru, lstm, bilstm, or bigru.")
+            raise ValueError("Unknown rnn type. Valid types are gru, lstm, bilstm, or bigru.")
 
     def build(self, input_shape):
         """
