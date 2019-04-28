@@ -35660,7 +35660,6 @@ tidak	B-SENTIMENT
 bersih	I-SENTIMENT
 .	O
 
-
 lokasi	B-ASPECT
 bagus	B-SENTIMENT
 dan	O
@@ -67097,5 +67096,10 @@ perlengkapan	O
 room	O
 ada	O
 semua	O
+.	O
+
+pelayanan	B-ASPECT
+yang	O
+baik	B-SENTIMENT
 .	O
 
