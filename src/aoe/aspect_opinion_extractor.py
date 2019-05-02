@@ -172,7 +172,7 @@ class AspectOpinionExtractor():
                         patience_count += 1
 
                     if patience_count == patience:
-                        print('Epoch', epoch, 'early stopping')
+                        print('Epoch', i, 'early stopping')
                         break
             else:
                 for i in range(epoch):
