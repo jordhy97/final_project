@@ -10,7 +10,7 @@ import time
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--train_data', default='../data/reviews/train.txt')
-    parser.add_argument('--general_embedding_model', default='../data/word_embedding/general_embedding.vec')
+    parser.add_argument('--general_embedding_model', default='../data/word_embedding/general_embedding_300.model')
     parser.add_argument('--domain_embedding_model', default='../data/word_embedding/domain_embedding_100.model')
     parser.add_argument('--general_embedding_dim', type=int, default=300)
     parser.add_argument('--domain_embedding_dim', type=int, default=100)
@@ -35,10 +35,11 @@ if __name__ == "__main__":
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.25, random_state=42)
 
     feature_extractor = FeatureExtractor(args.general_embedding_model, args.domain_embedding_model,
-                                         args.general_embedding_dim, args.domain_embedding_dim)
+                                         general_dim=args.general_embedding_dim, domain_dim=args.domain_embedding_dim)
 
-    X_train, y_train = prep_train_data(X_train, y_train, feature_extractor, batch)
-    X_val, y_val2 = prep_train_data(X_val, y_val, feature_extractor, batch)
+    X_train, y_train = prep_train_data(X_train, y_train, feature_extractor, batch=batch)
+    X_val2 = feature_extractor.get_features(X_val)
+    X_val, y_val2 = prep_train_data(X_val, y_val, feature_extractor, batch=batch)
 
     input_size = args.general_embedding_dim + args.domain_embedding_dim
     extractor = AspectOpinionExtractor()
@@ -49,11 +50,11 @@ if __name__ == "__main__":
         print(extractor.get_summary())
         start_time = time.time()
         np.random.seed(42)
-        extractor.fit(X_train, y_train, X_val, y_val2, (rnn_type + '.mdl'),
+        extractor.fit(X_train, y_train, X_val, y_val2, (rnn_type + '_batch.mdl'),
                       epoch=args.epoch, batch_size=args.batch_size,
                       verbose=args.verbose, patience=args.patience)
         finish_time = time.time()
         print('Elapsed time: {}'.format(timedelta(seconds=finish_time-start_time)))
-        extractor = AspectOpinionExtractor.load(rnn_type + '.mdl')
-        extractor.evaluate(X_val, y_val)
+        extractor = AspectOpinionExtractor.load(rnn_type + '_batch.mdl')
+        extractor.evaluate(X_val2, y_val)
         print()
