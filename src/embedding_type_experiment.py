@@ -56,7 +56,7 @@ if __name__ == "__main__":
             input_size = args.merged_embedding_dim
 
         print('Embedding type:', embedding_type)
-        extractor.init_model(input_size=input_size, rnn_type='bilstm')
+        extractor.init_model(input_size=input_size)
         print(extractor.get_summary())
         start_time = time.time()
         np.random.seed(42)
