@@ -142,7 +142,7 @@ class AspectOpinionExtractor():
         if batch_size > 1:
             if X_val is not None:
                 es = EarlyStopping(monitor='val_loss', mode='min', verbose=verbose, patience=patience)
-                mc = ModelCheckpoint('model_filename', monitor='val_loss', mode='min', verbose=verbose,
+                mc = ModelCheckpoint(model_filename, monitor='val_loss', mode='min', verbose=verbose,
                                       save_best_only=True)
                 self.model.fit(X_train, y_train, validation_data=(X_val, y_val),
                                batch_size=batch_size, epochs=epoch, verbose=verbose, callbacks=[es, mc])
