@@ -10,11 +10,11 @@ class FeatureExtractor():
     """
     def __init__(self, general_embedding_model, domain_embedding_model, general_dim, domain_dim):
         self.general_embedding = dict()
-        with open(general_embedding_model) as f:
-            for l in f:
-                rec = l.rstrip().split(' ')
-                self.general_embedding[rec[0]] = np.asarray([float(r) for r in rec[1:]])
-
+#        with open(general_embedding_model) as f:
+ #           for l in f:
+  #              rec = l.rstrip().split(' ')
+   #             self.general_embedding[rec[0]] = np.asarray([float(r) for r in rec[1:]])
+        self.general_embedding = FastText.load(general_embedding_model)
         self.domain_embedding = FastText.load(domain_embedding_model)
         self.general_unknown = np.zeros(general_dim)
         self.domain_unknown = np.zeros(domain_dim)
@@ -54,9 +54,13 @@ class FeatureExtractor():
         """
         result = []
         for token in tokens:
-            if token in self.general_embedding:
-                general_embedding = self.general_embedding[token]
-            else:
+      #      if token in self.general_embedding:
+       #         general_embedding = self.general_embedding[token]
+        #    else:
+         #       general_embedding = self.general_unknown
+            try:
+                general_embedding = self.general_embedding.wv[token]
+            except:
                 general_embedding = self.general_unknown
 
             try:
@@ -88,9 +92,12 @@ class FeatureExtractor():
         general_oov = []
         domain_oov = []
         for token in tokens:
-            if token not in self.general_embedding:
+#            if token not in self.general_embedding:
+ #               general_oov.append(token)
+            try:
+                general_embedding = self.general_embedding.wv[token]
+            except:
                 general_oov.append(token)
-
             try:
                 domain_embedding = self.domain_embedding.wv[token]
             except:
