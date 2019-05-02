@@ -36,7 +36,7 @@ if __name__ == "__main__":
     X, y = load_data(args.train_data)
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.25, random_state=42)
 
-    feature_extractor = FeatureExtractor(args.general_embedding_model, args.domain_embedding_model, args.merged_embedding_model
+    feature_extractor = FeatureExtractor(args.general_embedding_model, args.domain_embedding_model, args.merged_embedding_model,
                                          args.general_embedding_dim, args.domain_embedding_dim, args.merged_embedding_dim)
 
     extractor = AspectOpinionExtractor()
