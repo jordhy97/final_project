@@ -133,7 +133,7 @@ class FeatureExtractor():
             except:
                 merged_embedding = self.merged_unknown
 
-            result.append(general_embedding)
+            result.append(merged_embedding)
 
         if max_len != None:
             for i in range(len(tokens), max_len):
