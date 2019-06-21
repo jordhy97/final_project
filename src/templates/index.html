@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap core CSS-->
+  <link rel="stylesheet" href="/static/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <title>Hotel Review Aspect and Opinion Terms Extractor</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header text-center vertical-align">
+      <h1>Hotel Review Aspect and Opinion Terms Extractor</h1>
+    </div>
+
+    <form method="POST">
+      <div class="form-group">
+        <label>Hotel review:</label>
+        <textarea class="form-control textarea" name="review" autofocus required>{{review}}</textarea>
+      </div>
+
+      <div class="text-center mb-5">
+        <button type="submit" class="btn btn-primary">Extract!</button>
+      </div>
+    </form>
+
+    {% if extract %}
+    <div class="panel with-nav-tabs panel-default">
+      <div class="panel-heading">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#DE-CMLA" data-toggle="tab">DE-CMLA</a></li>
+          <li><a href="#DE" data-toggle="tab">DE</a></li>
+          <li><a href="#Gen-CMLA" data-toggle="tab">Gen-CMLA</a></li>
+          <li><a href="#Dom-CMLA" data-toggle="tab">Dom-CMLA</a></li>
+        </ul>
+      </div>
+
+      <div class="panel-body">
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="DE-CMLA">{{result1}}</div>
+          <div class="tab-pane fade" id="DE">{{result2}}</div>
+          <div class="tab-pane fade" id="Gen-CMLA">{{result3}}</div>
+          <div class="tab-pane fade" id="Dom-CMLA">{{result4}}</div>
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <span class="highlight_aspect">Aspect term</span>
+        <span class="highlight_opinion">Opinion term</span>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</body>
+</html>
