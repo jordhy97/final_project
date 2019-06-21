@@ -36,6 +36,9 @@ if __name__ == "__main__":
 
     with open(args.outfile, 'w') as output_file:
         for text in texts:
-            output_file.write(formalize_sentence(text.lower()) + '\n')
-
-    print("Number of processed text: " + str(len(texts)))
+            formalized_text = formalize_sentence(text.lower())
+            formalized_tokens = tokenize_sentence(formalized_text)
+            tokens = tokenize_sentence(text)
+            for i in range(len(tokens)):
+                output_file.write(tokens[i] + '\t' + formalized_tokens[i] + '\n')
+            output_file.write('\n')
