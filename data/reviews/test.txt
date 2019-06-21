@@ -60,7 +60,7 @@ lift	B-ASPECT
 kamar	B-ASPECT
 bersih	B-SENTIMENT
 ,	O
-bentuknya	O
+bentuknya	B-ASPECT
 unik	B-SENTIMENT
 ,	O
 tetapi	O
@@ -77,9 +77,9 @@ sayang	O
 linen	B-ASPECT
 kotor	B-SENTIMENT
 ,	O
-bekas	O
-ada	O
-spot	O
+bekas	B-SENTIMENT
+ada	I-SENTIMENT
+spot	I-SENTIMENT
 ,	O
 kamar	B-ASPECT
 mandi	I-ASPECT
@@ -266,11 +266,11 @@ kotor	B-SENTIMENT
 ,	O
 terutama	O
 pada	O
-lobi	O
-masingmasing	O
-lantai	O
-dan	O
-koridornya	O
+lobi	B-ASPECT
+masingmasing	I-ASPECT
+lantai	I-ASPECT
+dan	I-ASPECT
+koridornya	I-ASPECT
 .	O
 
 baguss	B-SENTIMENT
@@ -340,17 +340,17 @@ hotel	B-ASPECT
 bersih	B-SENTIMENT
 ,	O
 walaupun	O
-hotel	O
-lama	O
+hotel	B-ASPECT
+lama	B-SENTIMENT
 ,	O
 dan	O
 dari	O
 luar	O
-dekorasinya	O
-agak	O
-tua	O
+dekorasinya	B-ASPECT
+agak	B-SENTIMENT
+tua	I-SENTIMENT
 dan	O
-creepy	O
+creepy	B-SENTIMENT
 ,	O
 tetapi	O
 oke	B-SENTIMENT
@@ -498,9 +498,9 @@ ruang	O
 bawah	O
 tanah	O
 .	O
-sinyal	O
-tidak	O
-ada	O
+sinyal	B-ASPECT
+tidak	I-SENTIMENT
+ada	I-SENTIMENT
 .	O
 parkir	O
 kehujan	O
@@ -679,9 +679,9 @@ dalam	O
 alangkah	O
 baiknya	O
 disediakan	O
-petunjuk	O
-arah	O
-kiblat	O
+petunjuk	B-ASPECT
+arah	I-ASPECT
+kiblat	I-ASPECT
 di	O
 dalam	O
 kamar	O
@@ -760,14 +760,14 @@ kamar	B-ASPECT
 mandinya	I-ASPECT
 airnya	I-ASPECT
 mengalir	B-SENTIMENT
-terus	O
+terus	I-SENTIMENT
 ,	O
 jadi	O
 berisik	O
 ,	O
-tv	O
-masih	O
-tabung	O
+tv	B-ASPECT
+masih	B-SENTIMENT
+tabung	I-SENTIMENT
 ,	O
 kecewa	B-SENTIMENT
 sih	O
@@ -901,33 +901,33 @@ dapat	O
 kamar	O
 penginapan	O
 yang	O
-full	O
-fasilitas	O
+full	B-SENTIMENT
+fasilitas	B-ASPECT
 .	O
 mulai	O
-air	O
-hangat	O
+air	B-ASPECT
+hangat	I-ASPECT
 ,	O
-ac	O
+ac	B-ASPECT
 ,	O
 dan	O
-tv	O
+tv	B-ASPECT
 dengan	O
-saluran	O
-lengkap	O
+saluran	B-ASPECT
+lengkap	B-SENTIMENT
 .	O
 
 lumayan	B-SENTIMENT
 twrjangkau	I-SENTIMENT
 ,	O
 putaran	O
-air	O
-keran	O
-nya	O
-kadang	O
-panas	O
-kadang	O
-dingin	O
+air	B-ASPECT
+keran	I-ASPECT
+nya	I-ASPECT
+kadang	B-SENTIMENT
+panas	I-SENTIMENT
+kadang	I-SENTIMENT
+dingin	I-SENTIMENT
 :	O
 )	O
 .	O
@@ -968,7 +968,7 @@ mas	O
 yang	B-ASPECT
 jaga	I-ASPECT
 malam	I-ASPECT
-baik	I-SENTIMENT
+baik	B-SENTIMENT
 .	O
 
 pelayanan	B-ASPECT
@@ -1068,7 +1068,7 @@ nya	I-ASPECT
 parah	B-SENTIMENT
 .	O
 berisik	B-SENTIMENT
-bersuara	O
+bersuara	I-SENTIMENT
 .	O
 buat	O
 tidak	O
@@ -1156,28 +1156,28 @@ muat	O
 orang	O
 .	O
 awalnya	O
-bagus	O
+bagus	B-SENTIMENT
 tetapi	O
 tengah	O
 malam	O
-listriknya	O
-habis	O
+listriknya	B-ASPECT
+habis	B-SENTIMENT
 dan	O
 disuruh	O
 pindah	O
 kamar	O
 yang	O
-kasurnya	O
+kasurnya	B-ASPECT
 lebih	O
-kecil	O
+kecil	B-SENTIMENT
 .	O
 tidak	B-SENTIMENT
 ada	I-SENTIMENT
-disediakan	O
+disediakan	I-SENTIMENT
 pouch	B-ASPECT
-yang	O
-isinya	O
-perlengkapan	B-ASPECT
+yang	I-ASPECT
+isinya	I-ASPECT
+perlengkapan	I-ASPECT
 mandi	I-ASPECT
 .	O
 agak	B-SENTIMENT
@@ -1185,8 +1185,8 @@ kecewa	I-SENTIMENT
 sebenarnya	O
 .	O
 
-free	O
-wifi	B-ASPECT
+free	B-ASPECT
+wifi	I-ASPECT
 mengecewakan	B-SENTIMENT
 karena	O
 tidak	O
@@ -1252,9 +1252,9 @@ sekilas	O
 terlihat	O
 mewah	O
 tetapi	O
-banya	O
+banya	B-ASPECT
 yang	O
-kurang	O
+kurang	B-SENTIMENT
 ,	O
 toilet	B-ASPECT
 kotor	B-SENTIMENT
@@ -1311,8 +1311,8 @@ padam	I-SENTIMENT
 sendiri	I-SENTIMENT
 .	O
 tetapi	O
-selain	O
-itu	O
+selain	B-ASPECT
+itu	I-ASPECT
 semuanya	B-ASPECT
 bagus	B-SENTIMENT
 dan	O
@@ -1368,9 +1368,9 @@ dan	O
 kulkas	O
 .	O
 kok	O
-pelit	O
-listrik	O
-banget	O
+pelit	B-ASPECT
+listrik	I-ASPECT
+banget	B-SENTIMENT
 ,	O
 terus	O
 pas	O
@@ -1386,11 +1386,11 @@ lumayan	B-SENTIMENT
 lah	O
 .	O
 meski	O
-lelah	O
-naik	O
-turun	O
-tangga	O
-mantap	O
+lelah	B-SENTIMENT
+naik	I-SENTIMENT
+turun	I-SENTIMENT
+tangga	I-SENTIMENT
+mantap	B-SENTIMENT
 .	O
 
 kolam	B-ASPECT
@@ -1404,7 +1404,7 @@ pelayanannya	B-ASPECT
 lumayan	B-SENTIMENT
 untuk	O
 budget	O
-sangat	O
+sangat	B-SENTIMENT
 .	O
 
 ac	B-ASPECT
@@ -1426,10 +1426,10 @@ ac	B-ASPECT
 kurang	B-SENTIMENT
 dingin	I-SENTIMENT
 ,	O
-banyak	O
-cat	O
-sudab	O
-lapuk	O
+banyak	B-ASPECT
+cat	I-ASPECT
+sudab	B-SENTIMENT
+lapuk	I-SENTIMENT
 perlu	O
 cat	O
 ulang	O
@@ -1478,14 +1478,13 @@ untuk	O
 harga	O
 segitu	O
 .	O
-tolong	O
-di	O
-di	O
-perhatikan	O
-lampu	O
+tolong	B-SENTIMENT
+di	I-SENTIMENT
+perhatikan	I-SENTIMENT
+lampu	B-ASPECT
 dan	O
-kamar	O
-mandi	O
+kamar	B-ASPECT
+mandi	I-ASPECT
 nya	O
 iya	O
 .	O
@@ -1551,8 +1550,8 @@ akan	O
 lebih	O
 baik	O
 ada	O
-hair	O
-dryer	O
+hair	B-ASPECT
+dryer	I-ASPECT
 di	O
 kamar	O
 .	O
@@ -1578,14 +1577,14 @@ banget	I-SENTIMENT
 pakai	O
 airy	O
 .	O
-dihotelnya	O
+dihotelnya	B-ASPECT
 juga	O
 nyaman	B-SENTIMENT
 memang	O
 cuma	O
-sinyalnya	O
+sinyalnya	B-ASPECT
 yang	O
-susah	O
+susah	B-SENTIMENT
 tetapi	O
 pelayanan	B-ASPECT
 suka	B-SENTIMENT
@@ -1611,7 +1610,7 @@ sedang	O
 renovasi	O
 jadi	O
 terlihat	O
-kotor	O
+kotor	B-SENTIMENT
 ,	O
 pelayanan	B-ASPECT
 oke	B-SENTIMENT
@@ -1691,8 +1690,8 @@ rokok	I-SENTIMENT
 ,	O
 kebersihan	B-ASPECT
 kamar	I-ASPECT
-dan	I-ASPECT
-kamar	I-ASPECT
+dan	O
+kamar	B-ASPECT
 mandi	I-ASPECT
 perlu	B-SENTIMENT
 ditingkatkan	I-SENTIMENT
@@ -1838,10 +1837,10 @@ harga	B-ASPECT
 terjangkau	B-SENTIMENT
 .	O
 
-enak	O
+enak	B-SENTIMENT
 sih	O
 .	O
-bagus	O
+bagus	B-SENTIMENT
 .	O
 tetapi	O
 kamar	B-ASPECT
@@ -1899,7 +1898,7 @@ airy	O
 
 untuk	O
 budget	O
-room	O
+room	B-ASPECT
 lumayan	B-SENTIMENT
 lah	O
 ,	O
@@ -1923,16 +1922,16 @@ tetapi	O
 kusus	O
 buat	O
 kamat	B-ASPECT
-airynya	O
-benarbenar	O
-berbeda	O
-sekali	O
-dengan	O
-kamar	O
-lainya	O
+airynya	I-ASPECT
+benarbenar	B-SENTIMENT
+berbeda	I-SENTIMENT
+sekali	I-SENTIMENT
+dengan	I-SENTIMENT
+kamar	I-SENTIMENT
+lainya	I-SENTIMENT
 ,	O
-kamar	O
-airynya	O
+kamar	B-ASPECT
+airynya	I-ASPECT
 banyak	B-SENTIMENT
 sarang	I-SENTIMENT
 labalaba	I-SENTIMENT
@@ -1971,7 +1970,7 @@ pengap	B-SENTIMENT
 .	O
 
 aku	O
-suka	O
+suka	B-SENTIMENT
 disini	O
 .	O
 dapat	O
@@ -2176,9 +2175,9 @@ nyaman	I-SENTIMENT
 .	O
 
 kamar	B-ASPECT
-seperti	O
-di	O
-foto	O
+seperti	B-SENTIMENT
+di	I-SENTIMENT
+foto	I-SENTIMENT
 ,	O
 luas	B-SENTIMENT
 bersih	B-SENTIMENT
@@ -2250,7 +2249,7 @@ juga	O
 baik	B-SENTIMENT
 .	O
 
-spechless	O
+spechless	B-SENTIMENT
 ketika	O
 dapat	O
 kamar	O
@@ -2487,8 +2486,8 @@ helai	I-SENTIMENT
 rambut	I-SENTIMENT
 ,	O
 sepertinya	O
-belum	O
-dibersihkan	O
+belum	B-SENTIMENT
+dibersihkan	B-SENTIMENT
 belum	B-SENTIMENT
 diganti	I-SENTIMENT
 seprai	B-ASPECT
@@ -2539,11 +2538,11 @@ tidak	B-SENTIMENT
 berasa	I-SENTIMENT
 .	O
 
-tv	O
-ada	O
+tv	B-ASPECT
+ada	B-SENTIMENT
 tetapi	O
-channel	O
-standar	O
+channel	B-ASPECT
+standar	B-SENTIMENT
 saja	O
 .	O
 
@@ -2580,9 +2579,9 @@ buat	O
 susah	O
 tidur	O
 .	O
-makanan	O
+makanan	B-ASPECT
 iya	O
-alhamdulillah	O
+alhamdulillah	B-SENTIMENT
 ,	O
 lokasi	B-ASPECT
 strategis	B-SENTIMENT
@@ -2632,8 +2631,8 @@ lumayan	B-SENTIMENT
 lah	O
 .	O
 
-diatas	O
-ekspektasi	O
+diatas	B-SENTIMENT
+ekspektasi	I-SENTIMENT
 ,	O
 ok	B-SENTIMENT
 .	O
@@ -2730,7 +2729,7 @@ terlalu	B-SENTIMENT
 kecil	I-SENTIMENT
 dan	O
 di	O
-tangga	O
+tangga	B-ASPECT
 tercium	O
 sesuatu	O
 yang	O
@@ -2806,8 +2805,8 @@ tidak	B-SENTIMENT
 aman	I-SENTIMENT
 .	O
 
-sudah	O
-tua	O
+sudah	B-SENTIMENT
+tua	I-SENTIMENT
 ,	O
 air	B-ASPECT
 panasonic	I-ASPECT
@@ -2911,8 +2910,8 @@ memang	O
 strategis	B-SENTIMENT
 walaupun	O
 memang	O
-agak	O
-terganggu	O
+agak	B-SENTIMENT
+terganggu	I-SENTIMENT
 karena	O
 tepat	O
 di	O
@@ -13685,8 +13684,8 @@ yang	O
 mati	B-SENTIMENT
 .	O
 
-sesuai	O
-gambar	O
+sesuai	B-SENTIMENT
+gambar	I-SENTIMENT
 .	O
 bersih	B-SENTIMENT
 .	O
@@ -13778,7 +13777,7 @@ kurang	B-SENTIMENT
 bersih	I-SENTIMENT
 .	O
 
-baik	O
+baik	B-SENTIMENT
 dan	O
 selalu	O
 ingin	O
@@ -13828,8 +13827,8 @@ sempat	B-SENTIMENT
 macet	I-SENTIMENT
 ,	O
 ada	O
-handuk	O
-bekas	O
+handuk	B-ASPECT
+bekas	B-SENTIMENT
 di	O
 lemari	O
 .	O
@@ -13940,10 +13939,10 @@ ada	I-SENTIMENT
 jendela	B-ASPECT
 .	O
 handle	B-ASPECT
-switch	O
-keran	O
-bath	O
-tub	O
+switch	I-ASPECT
+keran	I-ASPECT
+bath	I-ASPECT
+tub	I-ASPECT
 ke	O
 shower	O
 sudah	O
@@ -14480,10 +14479,10 @@ cuma	O
 satu	O
 yang	O
 buat	O
-kecewa	O
+kecewa	B-SENTIMENT
 dan	O
-tidak	O
-suka	O
+tidak	B-SENTIMENT
+suka	I-SENTIMENT
 yaitu	O
 orang	O
 yang	O
@@ -14519,8 +14518,8 @@ buat	O
 cs	B-ASPECT
 /	O
 pelayan	B-ASPECT
-mbak	O
-mbaknya	O
+mbak	I-ASPECT
+mbaknya	I-ASPECT
 .	O
 terimakasih	O
 .	O
@@ -14720,7 +14719,7 @@ basement	O
 .	O
 kebetulan	O
 wifi	B-ASPECT
-hotel	O
+hotel	I-ASPECT
 error	B-SENTIMENT
 .	O
 karena	O
@@ -14881,15 +14880,15 @@ recommended	B-SENTIMENT
 banget	I-SENTIMENT
 .	O
 
-pemilik	O
+pemilik	B-ASPECT
 seperti	O
-tidak	O
-tahu	O
+tidak	B-SENTIMENT
+tahu	I-SENTIMENT
 dan	O
-tidak	O
-kuasai	O
-aplikasi	O
-airy	O
+tidak	B-SENTIMENT
+kuasai	I-SENTIMENT
+aplikasi	I-SENTIMENT
+airy	I-SENTIMENT
 ,	O
 kamar	O
 airynya	O
@@ -15455,12 +15454,12 @@ peristirahatan	O
 
 bagus	B-SENTIMENT
 tetapi	O
-tidak	O
-kedap	O
-suara	O
+tidak	B-SENTIMENT
+kedap	I-SENTIMENT
+suara	I-SENTIMENT
 dari	O
 resepsionis	O
-ribut	O
+ribut	B-SENTIMENT
 jadi	O
 susah	O
 tidur	O
@@ -15676,16 +15675,16 @@ lain	O
 
 maaf	O
 ,	O
-kamar	O
+kamar	B-ASPECT
 dihotel	O
 ini	O
-tidak	O
-sesuai	O
+tidak	B-SENTIMENT
+sesuai	I-SENTIMENT
 dengan	O
 tagline	O
 airy	O
 .	O
-murah	O
+murah	B-SENTIMENT
 iya	O
 ,	O
 tetapi	O
@@ -15763,7 +15762,7 @@ strategis	B-SENTIMENT
 .	O
 kamar	B-ASPECT
 bagus	B-SENTIMENT
-sesuai	O
+sesuai	B-SENTIMENT
 harga	O
 .	O
 next	O
@@ -16030,7 +16029,7 @@ airnya	I-ASPECT
 kurang	B-SENTIMENT
 lancar	I-SENTIMENT
 .	O
-rekomended	O
+rekomended	B-SENTIMENT
 buat	O
 yang	O
 mau	O
@@ -16154,7 +16153,7 @@ mandi	I-ASPECT
 pengalaman	O
 saya	O
 disini	O
-menyenangkan	O
+menyenangkan	B-SENTIMENT
 .	O
 tetapi	O
 di	O
@@ -16220,7 +16219,7 @@ dingin	I-SENTIMENT
 ac	B-ASPECT
 nya	I-ASPECT
 perlu	B-SENTIMENT
-ditingkatkan	B-SENTIMENT
+ditingkatkan	I-SENTIMENT
 dan	O
 air	B-ASPECT
 panasnya	I-ASPECT
@@ -16302,8 +16301,8 @@ minimarket	O
 
 kenyamanan	B-ASPECT
 kurang	B-SENTIMENT
-keran	O
-air	B-ASPECT
+keran	B-ASPECT
+air	I-ASPECT
 panas	I-ASPECT
 tidak	B-SENTIMENT
 maksimal	I-SENTIMENT
